@@ -22,6 +22,7 @@ src/config.js
 .env.test.local
 .env.production.local
 .env
+/.env
 
 
 npm-debug.log*

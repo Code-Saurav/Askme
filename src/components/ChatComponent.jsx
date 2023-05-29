@@ -8,18 +8,13 @@ import { app, db } from "../firebase.js";
 import { getAuth } from "firebase/auth";
 import {
   collection,
-  query,
-  where,
-  limit,
-  getDocs,
   getDoc,
   setDoc,
   doc,
   serverTimestamp,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { addDoc, updateDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { updateDoc } from "firebase/firestore";
 import ChatLoad from "./ChatLoad";
 import TextToSpeech from "./TextToSpeech";
 
@@ -27,8 +22,6 @@ const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [showOlderChat, setShowOlderChat] = useState(false);
-  const [speech, setSpeech] = useState("");
-  const [speak, setSpeak] = useState(false);
   const auth = getAuth(app);
 
   const buttonRef = useRef();
@@ -45,7 +38,8 @@ const ChatComponent = () => {
   };
 
   const sendMessage = async () => {
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    console.log("ApiKEy send message" + API_KEY);
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     const payload = {
