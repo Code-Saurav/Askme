@@ -39,7 +39,6 @@ const ChatComponent = () => {
 
   const sendMessage = async () => {
     const API_KEY = process.env.REACT_APP_API_KEY;
-    console.log("ApiKEy send message" + API_KEY);
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     const payload = {

@@ -35,7 +35,6 @@ const Signup = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formData);
     setLoading(true);
     // Create user in the firebase with email and password
     createUserWithEmailAndPassword(auth, email, password)
