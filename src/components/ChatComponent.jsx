@@ -22,8 +22,6 @@ import { addDoc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import ChatLoad from "./ChatLoad";
 import TextToSpeech from "./TextToSpeech";
-import config from '../config.js'
-
 
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
@@ -46,9 +44,8 @@ const ChatComponent = () => {
     setShowOlderChat((prevState) => !prevState);
   };
 
-
   const sendMessage = async () => {
-    const API_KEY = config.apiKey;
+    const API_KEY = process.env.API_KEY;
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     const payload = {
