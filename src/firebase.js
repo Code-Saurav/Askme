@@ -5,12 +5,12 @@ import { getFirestore , collection, addDoc, doc, setDoc} from "firebase/firestor
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDLQaVIi_O52Xswg-jvfNajrp5qz-fLhHU",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "login-page2-85c9a.firebaseapp.com",
   projectId: "login-page2-85c9a",
   storageBucket: "login-page2-85c9a.appspot.com",
   messagingSenderId: "587127194927",
-  appId: "1:587127194927:web:2dc80d355bbcda2b1f8dda",
+  appId: process.env.REACT_APP_FIREBASE_ID,
 };
 
 // Initialize Firebase
