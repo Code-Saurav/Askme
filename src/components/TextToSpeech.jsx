@@ -1,7 +1,6 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { ResponsiveVoice } from 'responsivevoice';
 
-import Speech from "react-speech";
 
 const TextToSpeech = ({ speechText }) => {
   useEffect(() => {
@@ -10,12 +9,14 @@ const TextToSpeech = ({ speechText }) => {
     const utterance = new SpeechSynthesisUtterance();
 
     utterance.text = speechText;
-    utterance.voice = synth.getVoices()[1]; // Select a specific voice
-    utterance.rate = 0.8; // Adjust the speaking rate
+    utterance.voice = synth.getVoices().find((voice) => voice.lang === 'en-US');
+    utterance.rate = 0.9; // Adjust the speaking rate
     synth.speak(utterance);
 
+   
     return () => {
       synth.cancel();
+     
     };
   }, [speechText]);
 };
