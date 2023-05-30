@@ -196,7 +196,7 @@ code {
   color: white;
   font-size: 50px;
   font-weight: 50px;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 .navbar-item {
@@ -295,8 +295,8 @@ code {
   flex-direction: horizontal;
   padding: 5px;
   margin: 5px;
-background-color: rgb(211, 248, 231);
-border-radius: 5px;
+  background-color: rgb(211, 248, 231);
+  border-radius: 5px;
   align-items: center;
 }
 
@@ -306,10 +306,9 @@ border-radius: 5px;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-  background-color:rgb(56, 142, 56);
+  background-color: rgb(56, 142, 56);
   align-items: center;
-  justify-content:flex-end;
-;
+  justify-content: flex-end;
 }
 
 .singleMessage {
@@ -331,7 +330,6 @@ border-radius: 5px;
   border-radius: 50%;
   background-color: green;
   border: 2px solid green;
-
 }
 .user-designation-human {
   color: green;
@@ -343,7 +341,6 @@ border-radius: 5px;
   border-radius: 50%;
   background-color: white;
   border: 2px solid green;
-
 }
 
 /* Change the color of the default side slider */
@@ -355,8 +352,7 @@ border-radius: 5px;
   background-color: green; /* Color of the side slider */
 }
 
-
-.small-btn-primary{
+.small-btn-primary {
   color: white;
   background-color: green;
   padding: 10px;
@@ -368,7 +364,7 @@ border-radius: 5px;
   transition: transform 0.3s ease-in-out;
 }
 
-.small-btn-secondary{
+.small-btn-secondary {
   color: green;
   background-color: white;
   padding: 10px;
@@ -379,10 +375,92 @@ border-radius: 5px;
   box-shadow: 0 2px 4px black;
   transition: transform 0.3s ease-in-out;
 }
-.small-btn-secondary:hover{
+.small-btn-secondary:hover {
   color: white;
-  background-color: green;
-  
+  background-color: rgb(210, 225, 210);
+
   box-shadow: 0 2px 4px white;
   transition: transform 0.3s ease-in-out;
 }
+
+.modal-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: gray;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.feedbackModal {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedbackModal-content {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 600px;
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  text-align: center;
+}
+
+.modal-input-div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.modal-input-control {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.modal-input-control-text-area {
+  display: flex;
+  flex-direction: column;
+  height:100px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.modal-input-control:focus {
+  outline-color: white;
+  outline-style: solid;
+}
+
+
+.submit-form-button {
+  color: green;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px black;
+  transition: transform 0.3s ease-in-out;
+  align-self: flex-end;
+}
+
+
