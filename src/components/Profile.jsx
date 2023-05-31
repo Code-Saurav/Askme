@@ -5,25 +5,14 @@ import { app } from "../firebase.js";
 import "../index.css";
 import { useNavigate, Link } from "react-router-dom";
 import LogoutButton from "./buttons/LogoutButton";
-import ChatComponent from './ChatComponent';
+import ChatComponent from "./ChatComponent";
 
 const Profile = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
 
-  const [instruction, setInstruction] = useState("");
-
   const homeButtonHandler = () => {
     navigate("/home");
-  };
-
-  const onInstructionChangeHandler = (event) => {
-    setInstruction(event.target.value);
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(instruction);
   };
 
   return (
@@ -35,7 +24,7 @@ const Profile = () => {
       </div>
       <div className="Response">
         {" "}
-        <ChatComponent/>
+        <ChatComponent />
       </div>
 
       <button className="secondary-btn" onClick={homeButtonHandler}>

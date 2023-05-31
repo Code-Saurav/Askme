@@ -98,7 +98,7 @@ const Signup = () => {
               id="email"
               type="email"
               placeholder="Email"
-              value={email}
+              value= {email}
               onChange={onChangeHandler}
             />
           </div>

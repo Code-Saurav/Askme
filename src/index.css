@@ -383,36 +383,37 @@ code {
   transition: transform 0.3s ease-in-out;
 }
 
-.modal-overlay {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: gray;
-  opacity: 0.7;
-  z-index: 1;
-}
-
-.feedbackModal {
-  position: absolute;
-  z-index: 2;
+.overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.feedbackModal {
+  position: relative;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+}
+
 .feedbackModal-content {
+  color: white;
+  margin-top: 100px;
+  position: absolute;
+  background-color: green;
+  border-radius: 10px;
+  height: 400px;
+  width: 500px;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 600px;
-  border-radius: 10px;
-  color: white;
-  background-color: green;
-  text-align: center;
+  align-items: center;
 }
 
 .modal-input-div {
@@ -420,13 +421,12 @@ code {
   flex-direction: column;
   margin: 10px;
   padding: 10px;
+  width: 400px;
   border-radius: 5px;
   border: none;
   outline: none;
 }
 .modal-input-control {
-  display: flex;
-  flex-direction: column;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -434,9 +434,7 @@ code {
   outline: none;
 }
 .modal-input-control-text-area {
-  display: flex;
-  flex-direction: column;
-  height:100px;
+  height: 100px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -448,7 +446,6 @@ code {
   outline-color: white;
   outline-style: solid;
 }
-
 
 .submit-form-button {
   color: green;
@@ -462,5 +459,3 @@ code {
   transition: transform 0.3s ease-in-out;
   align-self: flex-end;
 }
-
-
