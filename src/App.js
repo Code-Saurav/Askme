@@ -32,14 +32,18 @@ function App() {
 
   return (
     <div>
-      <NavBar />
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={!loggedIn ? <Signup /> : <Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/old-chat" element={<ChatLoad />} />
           <Route path="/login" element={!loggedIn ? <Login /> : <Home />} />
-          <Route path="/profile/:username" element={<Profile />} />
+          <Route
+            path="/profile/:username"
+            element={loggedIn ? <Profile /> : <Login />}
+          />
+          <Route path="/profile" element={loggedIn ? <Profile /> : <Login />} />
         </Routes>
       </Router>
       <ToastContainer />

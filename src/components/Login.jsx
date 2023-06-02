@@ -59,7 +59,7 @@ const Login = () => {
         const user = userCredential.user;
         if (user) {
           console.log("Login SuccessFull");
-          navigate(`/profile/${auth.currentUser.displayName}`);
+          navigate(`/home`);
           setLoading(false);
           toast.success("Successfull Login");
           setFormData({ email: "", name: "", password: "" });

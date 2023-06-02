@@ -55,10 +55,10 @@ const ChatLoad = () => {
 
   return (
     <>
-      <h1>Older Chat For  <span>{auth.currentUser.displayName}</span></h1>
+      <h1>
+        Older Chat For <span>{auth.currentUser.displayName}</span>
+      </h1>
       <div>
-       
-
         {dataFetched &&
           fetchedChat.messages.map((message, index) => (
             <div key={index}>
@@ -83,7 +83,6 @@ const ChatLoad = () => {
                 )}
                 <span className="singleMessage">{message.content}</span>
               </div>
-              
             </div>
           ))}
       </div>

@@ -108,11 +108,10 @@ const ChatComponent = () => {
     <div className="askBox">
       <h2>Answers</h2>
 
-      {showOlderChat && (
-        <div className="chat-box">
-          <ChatLoad />
-        </div>
-      )}
+      <div className="chat-box">
+        <ChatLoad />
+      </div>
+
       {messages.length > 0 && (
         <div className="chat-box">
           <h2>Current Chat</h2>

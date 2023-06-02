@@ -3,20 +3,18 @@ import { FaUser } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { app, db } from "../firebase.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import {
-  collection,
-  doc,
-  getDoc,
-  updateDoc,
-  setDoc,
-  addDoc,
-} from "firebase/firestore";
+import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
+import { collection, doc, setDoc } from "firebase/firestore";
 import { serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
   const auth = getAuth(app);
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [feedBackModal, setFeedBackModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -71,6 +69,12 @@ const NavBar = () => {
     setFeedBackModal(false);
   };
 
+  const loginHandler = () => {
+    navigate("/login");
+    toast.success("Directed to Login");
+    setFeedBackModal(false);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
@@ -113,19 +117,25 @@ const NavBar = () => {
         {feedBackModal && (
           <div className="overlay" onClick={feedBackHandler}></div>
         )}
-        {feedBackModal && (
+        {feedBackModal && isLoggedIn && (
           <div className="feedbackModal">
             <form
               className="feedbackModal-content"
               onSubmit={feedbackFormSubmit}
             >
+              <button
+                className="closeIconButton"
+                onClick={() => setFeedBackModal(false)}
+              >
+                <AiOutlineClose />
+              </button>
               <h2>Feedback Form </h2>
               <div className="modal-input-div">
                 <input
                   className="modal-input-control"
                   type="text"
                   placeholder="Name"
-                  value={ auth.currentUser ? auth.currentUser.displayName : name }
+                  value={auth.currentUser ? auth.currentUser.displayName : name}
                   id="name"
                   onChange={onChangeHandler}
                 />
@@ -133,7 +143,7 @@ const NavBar = () => {
                   className="modal-input-control"
                   type="email"
                   placeholder="Email"
-                  value= { auth.currentUser ? auth.currentUser.email : email }
+                  value={auth.currentUser ? auth.currentUser.email : email}
                   id="email"
                   onChange={onChangeHandler}
                 />
@@ -154,6 +164,22 @@ const NavBar = () => {
             </form>
           </div>
         )}
+        {feedBackModal && !isLoggedIn && (
+          <div className="feedbackModal">
+            <div className="feedbackModal-content">
+              <h2>Please Login to give Feedback</h2>
+              <button
+                className="small-btn-secondary-login"
+                onClick={loginHandler}
+              >
+                {" "}
+                Login{" "}
+              </button>
+              {/* <button className = "small-btn-secondary-login" onClick = {LoginHandler}> Login </button> */}
+            </div>
+          </div>
+        )}
+
         {loading && <Loading />}
       </div>
     </>
