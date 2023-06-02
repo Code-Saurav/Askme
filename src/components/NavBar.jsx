@@ -33,6 +33,16 @@ const NavBar = () => {
     }));
   };
 
+  const logoutHandler = () => {
+    setLoading(true);
+    setTimeout(() => {
+      auth.signOut();
+    }, 500);
+
+    setLoading(false);
+    navigate("/login");
+  };
+
   const feedBackHandler = () => {
     setFeedBackModal((prevState) => !prevState);
   };
@@ -94,22 +104,29 @@ const NavBar = () => {
       <nav className="NavBar">
         <div className="navbar-item">AskMe.com</div>
         <ul className="navbar-item">
-          <li className ="userIcon" onClick={feedBackHandler}>Feedback</li>
+          <li className="userIcon" onClick={feedBackHandler}>
+            Feedback
+          </li>
           {isLoggedIn ? (
             <li className="userIcon">
               <FaUser />
               <span className="hint-text">{auth.currentUser.displayName}</span>
             </li>
           ) : (
-            <li className="userIcon" onClick = {() => navigate("/login")}> Login</li>
+            <li className="userIcon" onClick={() => navigate("/login")}>
+              {" "}
+              Login
+            </li>
           )}
           {isLoggedIn ? (
-            <li className="userIcon">
+            <li className="userIcon" onClick={logoutHandler}>
               <FiLogOut />
               <span className="hint-text">logout</span>
             </li>
           ) : (
-            <li className="userIcon" onClick = {() => navigate("/signup")}>SignUp</li>
+            <li className="userIcon" onClick={() => navigate("/signup")}>
+              SignUp
+            </li>
           )}
         </ul>
       </nav>
