@@ -10,7 +10,7 @@ import { serverTimestamp, collection, doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ const Signup = () => {
           timestamp: serverTimestamp(),
         })
           .then(() => {
-            toast.success("User Data Saved")
+            toast.success("User Data Saved");
             navigate("/login");
             setLoading(false);
           })
@@ -66,8 +66,9 @@ const Signup = () => {
           });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        setLoading(false);
+        toast.error("Invalid User Information");
+        document.getElementById("name").focus();
         // ..
       });
 
@@ -98,7 +99,7 @@ const Signup = () => {
               id="email"
               type="email"
               placeholder="Email"
-              value= {email}
+              value={email}
               onChange={onChangeHandler}
             />
           </div>
@@ -123,7 +124,7 @@ const Signup = () => {
             Existing member?{" "}
             <span>
               {" "}
-              <Link to="/login"> Login here </Link>{" "}
+              <Link className = "link" to="/login"> Login here </Link>{" "}
             </span>
           </p>
         </form>

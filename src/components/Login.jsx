@@ -123,7 +123,10 @@ const Login = () => {
             Not a member?{" "}
             <span>
               {" "}
-              <Link to="/"> SignUp here </Link>{" "}
+              <Link className="link" to="/">
+                {" "}
+                SignUp here{" "}
+              </Link>{" "}
             </span>
           </p>
         </form>

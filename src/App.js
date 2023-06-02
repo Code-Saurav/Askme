@@ -36,6 +36,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={!loggedIn ? <Signup /> : <Home />} />
+          <Route path="/signup" element={!loggedIn ? <Signup /> : <Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/old-chat" element={<ChatLoad />} />
           <Route path="/login" element={!loggedIn ? <Login /> : <Home />} />

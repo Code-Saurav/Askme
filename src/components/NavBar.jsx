@@ -94,14 +94,14 @@ const NavBar = () => {
       <nav className="NavBar">
         <div className="navbar-item">AskMe.com</div>
         <ul className="navbar-item">
-          <li onClick={feedBackHandler}>Feedback</li>
+          <li className ="userIcon" onClick={feedBackHandler}>Feedback</li>
           {isLoggedIn ? (
             <li className="userIcon">
               <FaUser />
               <span className="hint-text">{auth.currentUser.displayName}</span>
             </li>
           ) : (
-            <li className="userIcon"> Login</li>
+            <li className="userIcon" onClick = {() => navigate("/login")}> Login</li>
           )}
           {isLoggedIn ? (
             <li className="userIcon">
@@ -109,7 +109,7 @@ const NavBar = () => {
               <span className="hint-text">logout</span>
             </li>
           ) : (
-            <li className="userIcon">SignUp</li>
+            <li className="userIcon" onClick = {() => navigate("/signup")}>SignUp</li>
           )}
         </ul>
       </nav>
