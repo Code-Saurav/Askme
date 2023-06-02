@@ -186,7 +186,6 @@ code {
 }
 
 .NavBar {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -202,16 +201,15 @@ code {
 .navbar-item {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 10px;
-  margin-right: 30px;
+  margin: 20px;
+  padding: 0;
 }
 
 .navbar-item li {
   font-size: 30px;
   padding: 5px;
-  margin-left: 100px;
+  margin-left: 50px;
+  /* margin-left: 100px; */
 }
 
 .profile-container {
@@ -509,6 +507,24 @@ code {
   border: 2px solid green;
 }
 
-.link{
-  color:green;
+.link {
+  color: green;
+}
+
+/*  Resoponsive  */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .NavBar {
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+  }
+
+  .navbar-item {
+    margin: 10px auto;
+  }
+  .navbar-item li {
+    margin:auto;
+    font-size: 20px;
+  }
 }
