@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import Loading from "./Loading";
 import { useNavigate } from "react-router-dom";
 
+
 const NavBar = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
@@ -102,7 +103,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="NavBar">
-        <div className="navbar-item">AskMe.com</div>
+        <div className="navbar-item">Ask Monkey </div>
         <ul className="navbar-item">
           <li className="userIcon" onClick={feedBackHandler}>
             Feedback
