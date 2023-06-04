@@ -106,7 +106,7 @@ const ChatComponent = () => {
 
   return (
     <div className="askBox">
-      <h2>Answers</h2>
+      <h2 className = "AskMonkey">Ask Monkey Chat </h2>
 
       <div className="chat-box">
         <ChatLoad />

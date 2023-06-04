@@ -312,7 +312,7 @@ code {
   width: 90%;
   max-height: 400px;
   margin: -10px 10px 10px 10px;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   overflow: auto;
   padding: 12px;
   border-radius: 5px;
@@ -592,6 +592,12 @@ code {
 
 .card-details {
   color: rgb(0, 6, 3);
+}
+
+.AskMonkey{
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;;
 }
 
 .profileButton-container {
