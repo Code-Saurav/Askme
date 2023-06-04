@@ -33,19 +33,19 @@ const Home = ({ userName }) => {
             className="card"
             cardName="Chat with Us"
             cardDetails="Can ask for help with any randome questions"
-            work = {() =>  navigate(`/profile/${auth.currentUser.displayName}`)}
+            work={() => navigate(`/profile/${auth.currentUser.displayName}`)}
           />
           <PrimaryCard
             className="card"
             cardName="Older Chat"
             cardDetails="Load older chats you have with Ask MOnkey"
-            work = {() => navigate('/old-chat')}
+            work={() => navigate("/old-chat")}
           />
         </div>
       </div>
 
       <div className="homeBottom">
-        <button className="secondary-btn" onClick={profileButtonHandler}>
+        <button className="primary-btn" onClick={profileButtonHandler}>
           {" "}
           Go to Profile to Start New Chat
         </button>

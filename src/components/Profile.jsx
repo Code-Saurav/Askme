@@ -28,7 +28,7 @@ const Profile = () => {
       </div>
 
       <div className = "profileButton-container">
-        <button className="secondary-btn" onClick={homeButtonHandler}>
+        <button className="primary-btn" onClick={homeButtonHandler}>
           Home
         </button>
         <LogoutButton />

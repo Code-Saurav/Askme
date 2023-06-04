@@ -61,7 +61,7 @@ const ChatLoad = () => {
       <div>
         {dataFetched &&
           fetchedChat.messages.map((message, index) => (
-            <div key={index}>
+            <div key={index} className="chatBox">
               <div
                 className={`${
                   message.role === "human"

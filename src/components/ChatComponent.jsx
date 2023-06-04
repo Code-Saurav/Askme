@@ -105,8 +105,8 @@ const ChatComponent = () => {
   };
 
   return (
-    <div className="askBox">
-      <h2 className = "AskMonkey">Ask Monkey Chat </h2>
+    <div className="askBigBox">
+      <h2 className="AskMonkey">Ask Monkey Chat </h2>
 
       <div className="chat-box">
         <ChatLoad />
@@ -152,7 +152,7 @@ const ChatComponent = () => {
           onKeyPress={buttonPressKey}
         />
 
-        <div className="askButton">
+        <div className="askButtonBox">
           <button
             className="primary-btn-inn"
             onClick={handleSend}
