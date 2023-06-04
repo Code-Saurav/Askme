@@ -27,10 +27,12 @@ const Profile = () => {
         <ChatComponent />
       </div>
 
-      <button className="secondary-btn" onClick={homeButtonHandler}>
-        Home
-      </button>
-      <LogoutButton />
+      <div className = "profileButton-container">
+        <button className="secondary-btn" onClick={homeButtonHandler}>
+          Home
+        </button>
+        <LogoutButton />
+      </div>
     </div>
   );
 };

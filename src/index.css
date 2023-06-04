@@ -111,8 +111,8 @@ code {
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
 }
-.older-chatBox{
-  margin: 10px
+.older-chatBox {
+  margin: 10px;
 }
 
 .primary-btn-short {
@@ -123,21 +123,32 @@ code {
   border: none;
   box-shadow: 0 2px 4px black;
   transition: transform 0.3s ease-in-out;
-  border-radius:5px;
+  border-radius: 5px;
 }
 .primary-btn-inn {
   color: white;
   background-color: green;
   padding: 10px;
   width: 100px;
+  height: 40px;
   border: none;
+  margin: 10px;
   box-shadow: 0 2px 4px black;
   transition: transform 0.3s ease-in-out;
-  margin-top: 13px;
-  margin-left: -114px;
+  border-radius: 5px;
+}
+
+.askInput {
+  width: 100%;
+  margin: auto;
+}
+
+.askButton {
+  right: 50px;
   position: absolute;
   border-radius: 5px;
-  
+  display: flex;
+  flex-direction: row;
 }
 
 .secondary-btn {
@@ -276,9 +287,10 @@ code {
 
 .request-text-control {
   background-color: white;
-  padding: 12px 12px 12px 12px;
+  padding: 12px 140px 12px 12px;
   border: 2px solid green;
-  width: 50%;
+  width: 80%;
+  height: 25px;
   margin: 10px;
   position: relative;
   border-radius: 5px;
@@ -289,12 +301,15 @@ code {
   position: relative;
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .chat-box {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  width: 90%;
   max-height: 400px;
   margin: -10px 10px 10px 10px;
   border: 2px solid green;
@@ -525,8 +540,8 @@ code {
   flex-wrap: wrap;
 }
 
-.homeTitle{
-  margin:10px;
+.homeTitle {
+  margin: 10px;
 }
 
 .homeBottom {
@@ -535,7 +550,7 @@ code {
 }
 
 .homeContent {
-  margin:auto;
+  margin: auto;
   background-color: rgb(184, 215, 192);
   width: 95%;
   max-height: 400px;
@@ -548,8 +563,8 @@ code {
   display: flex;
 }
 
-.card{
-  flex-grow:1;
+.card {
+  flex-grow: 1;
 }
 .main-card {
   text-align: center;
@@ -579,6 +594,15 @@ code {
   color: rgb(0, 6, 3);
 }
 
+.profileButton-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top:-15px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
 /*  Resoponsive  */
 /* Responsive Styles */
 @media (max-width: 768px) {

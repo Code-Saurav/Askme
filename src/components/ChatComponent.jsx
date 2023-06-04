@@ -152,16 +152,18 @@ const ChatComponent = () => {
           onKeyPress={buttonPressKey}
         />
 
-        <button
-          className="primary-btn-inn"
-          onClick={handleSend}
-          ref={buttonRef}
-        >
-          Send
-        </button>
-        <button className="small-btn-secondary">
-          <FaMicrophone />
-        </button>
+        <div className="askButton">
+          <button
+            className="primary-btn-inn"
+            onClick={handleSend}
+            ref={buttonRef}
+          >
+            Send
+          </button>
+          <button className="small-btn-secondary">
+            <FaMicrophone />
+          </button>
+        </div>
       </div>
       <button className="primary-btn" onClick={saveUserChatHistoryHandler}>
         {" "}
