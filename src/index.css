@@ -15,6 +15,7 @@ code {
 .container {
   margin-top: 20px;
   position: relative;
+  margin-bottom: 200px;
 }
 
 .container-disabled {
@@ -622,6 +623,7 @@ code {
   flex-direction: row;
   width: 100%;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .askBigBox {
@@ -638,6 +640,27 @@ code {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.footer-container {
+  width: 100%;
+  height: 100px;
+  background-color: #b1e7b3;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.footer-text {
+  text-align: center;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /*  Resoponsive  */

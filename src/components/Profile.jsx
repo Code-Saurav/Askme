@@ -6,6 +6,7 @@ import "../index.css";
 import { useNavigate, Link } from "react-router-dom";
 import LogoutButton from "./buttons/LogoutButton";
 import ChatComponent from "./ChatComponent";
+import Footer from './Footer';
 
 const Profile = () => {
   const auth = getAuth(app);
@@ -33,6 +34,7 @@ const Profile = () => {
         </button>
         <LogoutButton />
       </div>
+      <Footer/>
     </div>
   );
 };

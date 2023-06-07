@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
+import Footer from './Footer';
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);
@@ -134,6 +135,8 @@ const Signup = () => {
           <Loading />
         </div>
       )}
+
+      <Footer/>
     </>
   );
 };

@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ChatLoad from "./components/ChatLoad";
 import OlderChat from './components/OlderChat';
+import ResumeQues from './components/ResumeQues';
 
 function App() {
   const auth = getAuth(app);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/signup" element={!loggedIn ? <Signup /> : <Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/old-chat" element={<OlderChat />} />
+          <Route path="/resume-query" element={<ResumeQues />} />
           <Route path="/login" element={!loggedIn ? <Login /> : <Home />} />
           <Route
             path="/profile/:username"

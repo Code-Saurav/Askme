@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { FaEye } from "react-icons/fa";
 
 import Loading from "./Loading";
+import Footer from "./Footer";
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -137,6 +138,8 @@ const Login = () => {
           <Loading />
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

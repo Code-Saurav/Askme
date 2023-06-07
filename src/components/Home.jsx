@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 import LogoutButton from "./buttons/LogoutButton";
 import ChatLoad from "./ChatLoad";
 import PrimaryCard from "./cards/PrimaryCard";
+import Footer from './Footer';
 
 const Home = ({ userName }) => {
   const auth = getAuth(app);
@@ -41,6 +42,12 @@ const Home = ({ userName }) => {
             cardDetails="Load older chats you have with Ask MOnkey"
             work={() => navigate("/old-chat")}
           />
+          <PrimaryCard
+            className="card"
+            cardName="Question About Me"
+            cardDetails="Ask Question About me Based on My resume"
+            work={() => navigate("/resume-query")}
+          />
         </div>
       </div>
 
@@ -51,6 +58,7 @@ const Home = ({ userName }) => {
         </button>
         <LogoutButton />
       </div>
+      <Footer/>
     </div>
   );
 };
